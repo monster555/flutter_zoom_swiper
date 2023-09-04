@@ -2,7 +2,8 @@
 
 Welcome to the Flutter Zoom Swiper Challenge! This repository showcases a unique Flutter **ZoomSwiper** that provides an engaging and dynamic user experience through a zoom effect animation as you scroll.
 
-https://github.com/monster555/flutter_zoom_swiper/assets/32662133/0303b04f-9291-4b23-ac32-19b25d34f0ba
+https://github.com/monster555/flutter_zoom_swiper/assets/32662133/d9e40ac8-7b0c-49f0-861c-c186f7d307da
+
 
 ## Features
 - **Zoom Effect Animation**: As you scroll through the swiper, the slides will zoom in or out (depending on the parameters used when calling it) depending on their position, creating an engaging and dynamic user experience.
