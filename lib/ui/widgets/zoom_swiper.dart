@@ -90,6 +90,23 @@ class _ZoomSwiperState extends State<ZoomSwiper> {
   /// The raw index of the current page in the [PageView].
   double pageIndex = 0.0;
 
+  /// Listener method for updating the current page index when the page changes.
+  ///
+  /// This method is invoked when the page changes in the [PageView] controller.
+  /// It updates the [pageIndex] state variable to reflect the current page index.
+  void _indexChangeListener() {
+    // Update the [pageIndex] when the page changes.
+    setState(() => pageIndex = controller.page!);
+  }
+
+  /// Initializes the state of the widget.
+  ///
+  /// This method is called when this widget is inserted into the tree and can be
+  /// used for one-time initialization tasks. It creates a [PageController] with the
+  /// specified `viewportFraction` and adds a listener [_indexChangeListener] to it.
+  /// The listener will be called whenever the page changes. This method ensures that
+  /// the controller's listener is added only after the widget is built by using
+  /// `WidgetsBinding.instance.addPostFrameCallback`.
   @override
   void initState() {
     super.initState();
@@ -100,10 +117,22 @@ class _ZoomSwiperState extends State<ZoomSwiper> {
 
     // Listen to page changes in the [PageView] controller and update the [pageIndex] accordingly.
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      controller.addListener(() {
-        setState(() => pageIndex = controller.page!);
-      });
+      controller.addListener(_indexChangeListener);
     });
+  }
+
+  /// Dispose method to release resources when the widget is removed from the tree.
+  ///
+  /// This method removes the listener [_indexChangeListener] from the [controller]
+  /// and disposes of the [controller] itself to prevent memory leaks and resource
+  /// leaks. It should be called when the widget is no longer needed.
+  @override
+  void dispose() {
+    // Remove the listener and dispose the [PageController].
+    controller
+      ..removeListener(_indexChangeListener)
+      ..dispose();
+    super.dispose();
   }
 
   @override
