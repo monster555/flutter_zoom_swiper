@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_swiper/src/zoom_swiper.dart';
+import 'package:flutter_zoom_swiper/ui/widgets/zoom_swiper.dart';
 
 /// A page that displays a zoomable swiper of images or other content.
 ///

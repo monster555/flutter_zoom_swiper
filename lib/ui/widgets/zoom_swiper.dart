@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_swiper/src/drag_scroll_behavior_configuration.dart';
+import 'package:flutter_zoom_swiper/config/drag_scroll_behavior_configuration.dart';
 
 /// Enumerates the zoom modes used for swiping animations in the [ZoomSwiper] widget.
 ///

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_swiper/src/zoom_swiper_page.dart';
+import 'package:flutter_zoom_swiper/ui/zoom_swiper_page.dart';
 
 void main() => runApp(const MyApp());
 
